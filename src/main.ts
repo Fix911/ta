@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index'
+import 'virtual:svg-icons-register'
 /**
  * 加载全局样式
  */
