@@ -12,6 +12,6 @@ import SvgIcon from '@/components/svgicon.vue'
 
 <style>
 .xiaoxi{
-  font-size: 500px;
+  font-size: 72px;
 }
 </style>
