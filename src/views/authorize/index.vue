@@ -3,11 +3,13 @@
   <div>授权</div>
 </template>
 <script setup lang="ts">
+import { tokenStore } from '@/store/authorize'
+
+import { onMounted } from 'vue'
+const token = tokenStore()
 const params = new URLSearchParams(window.location.search)
-const code = params.get('code') as string
-const corpId = params.get('state') as string
-if (!code) {
 
-}
-
+onMounted(() => {
+  token.getToken(params)
+})
 </script>
