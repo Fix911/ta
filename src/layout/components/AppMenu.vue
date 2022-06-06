@@ -35,16 +35,16 @@
       </el-sub-menu>
     </el-sub-menu>
     <!-- 设置菜单    -->
-    <el-sub-menu index="4">
+    <el-sub-menu index="/console/config">
       <template #title>
         <el-icon><setting /></el-icon>
         <span>设置</span>
       </template>
-      <el-menu-item-group title="Group One">
-        <el-menu-item index="4-1">
+      <el-menu-item-group>
+        <el-menu-item index="/semester">
           学期
         </el-menu-item>
-        <el-menu-item index="4-2">
+        <el-menu-item index="/location">
           班级
         </el-menu-item>
         <el-menu-item index="4-2">
@@ -61,7 +61,7 @@
   </el-menu>
 </template>
 <script setup lang="ts">
-import { ElMenu, ElMenuItem, ElIcon, ElSubMenu } from 'element-plus'
+import { ElMenu, ElMenuItem, ElIcon, ElSubMenu, ElMenuItemGroup } from 'element-plus'
 import {
   House,
   Setting

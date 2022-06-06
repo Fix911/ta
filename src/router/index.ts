@@ -1,18 +1,32 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/AppLayout.vue'
+import configRoutes from './modules/configuration'
 const routes:RouteRecordRaw[] = [{
   path: '/',
   name: 'login',
   component: () => import('@/views/login/index.vue')
 },
 {
+  path: '/authorize',
+  name: 'authorize',
+  component: () => import('@/views/authorize/index.vue')
+},
+{
   path: '/console',
   component: Layout,
   children: [{
     path: '',
-    name: '首页',
+    name: 'console',
     component: () => import('@/views/home/index.vue')
-  }]
+  },
+  {
+    path: '/location',
+    name: '地点',
+    component: () => import('@/views/config/location/index.vue')
+
+  },
+  configRoutes
+  ]
 }]
 
 const router = createRouter({
