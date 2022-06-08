@@ -13,6 +13,7 @@ export const tokenStore = defineStore('token', {
       if (this.token === '') {
         getTokenByWechat(code, corpId).then(res => {
           this.token = res.data.token
+          console.log(res.data)
         })
       }
     }

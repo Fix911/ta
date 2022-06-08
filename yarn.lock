@@ -3357,7 +3357,7 @@ pidtree@^0.5.0:
 
 pinia-plugin-persist@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/pinia-plugin-persist/-/pinia-plugin-persist-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/pinia-plugin-persist/-/pinia-plugin-persist-1.0.0.tgz#fc696f225527f30bd5955109fafadd43c725e888"
   integrity sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==
   dependencies:
     vue-demi "^0.12.1"
