@@ -3,10 +3,10 @@
   <div>授权</div>
 </template>
 <script setup lang="ts">
-import { tokenStore } from '@/store/authorize'
+import { authorization } from '@/store/authorization'
 
 import { onMounted } from 'vue'
-const token = tokenStore()
+const token = authorization()
 const params = new URLSearchParams(window.location.search)
 
 onMounted(() => {

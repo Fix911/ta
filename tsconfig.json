@@ -22,7 +22,8 @@
       ]
     },
     "types": [
-      "element-plus/global"
+      "element-plus/global",
+      "pinia-plugin-persist"
     ]
   },
   "include": [
