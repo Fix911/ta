@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
 const service = axios.create({
-  baseURL: 'https://wx.njtsm.com/',
+  baseURL: 'https://www.njtsm.com/',
   timeout: 5000
 })
 
