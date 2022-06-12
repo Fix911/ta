@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { getTokenByWechat } from '@/api/wechat'
 
-export const authorization = defineStore('authorization', {
+export const useToken = defineStore('authorization', {
   state: () => ({
     token: '',
     userName: '',

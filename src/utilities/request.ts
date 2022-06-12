@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { authorization } from '@/store/authorization'
+import { useToken } from '@/store/authorization'
 import { storeToRefs } from 'pinia'
 import { ElMessage } from 'element-plus'
 
@@ -9,7 +9,7 @@ const service = axios.create({
 })
 
 service.interceptors.request.use((config) => {
-  const { token } = storeToRefs(authorization())
+  const { token } = storeToRefs(useToken())
   if (token.value !== '') {
   config.headers!.Authorization = 'Bearer ' + token.value
   }
