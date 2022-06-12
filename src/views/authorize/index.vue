@@ -1,6 +1,5 @@
-<!-- https://www.njtsm.com/authorize?auth_code=MUQ1sTHlf4E9lQOyXMhhcxCY9JxFR1-L7dHkD87jyT4BDStgu2jClf7nkouo0iihZwthl5FjRK0JJh-hTv7Tmg -->
 <template>
-  <div>授权</div>
+  <div>查询并授权..... 请稍等</div>
 </template>
 <script setup lang="ts">
 import { authorization } from '@/store/authorization'

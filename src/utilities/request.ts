@@ -1,15 +1,18 @@
 import axios, { AxiosRequestConfig } from 'axios'
+import { authorization } from '@/store/authorization'
+import { storeToRefs } from 'pinia'
+import { ElMessage } from 'element-plus'
 
 const service = axios.create({
   baseURL: 'https://www.njtsm.com/',
   timeout: 5000
 })
 
-service.interceptors.request.use(function (config) {
-//   const { accessToken } = storeToRefs(tokenStore())
-//   if (accessToken.value !== '') {
-//       config.headers!.Authorization = 'Bearer ' + accessToken.value
-//   }
+service.interceptors.request.use((config) => {
+  const { token } = storeToRefs(authorization())
+  if (token.value !== '') {
+  config.headers!.Authorization = 'Bearer ' + token.value
+  }
   /*
     * 向服务器存储文件时添加的头文件(服务器文件存储由阿里云oss替代)
     */
@@ -24,14 +27,21 @@ service.interceptors.request.use(function (config) {
 })
 
 // 添加响应拦截器
-service.interceptors.response.use(function (response) {
+service.interceptors.response.use((response) => {
+  console.log('response', response)
+  if ((response.status === 200 || response.status === 201) && response.data.errCode === 0) {
+    return response
+  } else {
+    ElMessage.error(response.data.errMsg)
+    return Promise.reject(new Error(response.data.errMsg))
+  }
   // 统一处理接口返回的响应错误。
   // 对响应数据做点什么
-  return response
-}, function (error) {
+}, (error) => {
   // 超出 2xx 范围的状态码都会触发该函数。
   // 对响应错误做点什么
-  return Promise.reject(error)
+  error.response && ElMessage.error(error.response.statusText)
+  return Promise.reject(new Error(error.response.statusText))
 })
 
 export default <T = any> (config:AxiosRequestConfig) => {
