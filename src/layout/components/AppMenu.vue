@@ -1,10 +1,10 @@
 <template>
   <el-menu
-    active-text-color="#ffd04b"
-    background-color="#545c64"
+    active-text-color="#25A0E4"
+    background-color="#324157"
     class="el-menu-vertical-demo"
     default-active="2"
-    text-color="#fff"
+    text-color="#BFCBD9"
     router
   >
     <el-sub-menu index="1">
