@@ -9,28 +9,28 @@ export const menuList:Menu[] = [{
   children: [{
     id: 11,
     name: '学期',
-    path: '/console/term',
+    path: '/term',
     children: null
   },
   {
     id: 12,
     name: '班级',
-    path: '/console/class',
+    path: '/class',
     children: null
   }, {
     id: 13,
     name: '课程',
-    path: '/console/course',
+    path: '/course',
     children: null
   }, {
     id: 14,
     name: '作息时间表',
-    path: '/console/schedule',
+    path: '/schedule',
     children: null
   }, {
     id: 15,
     name: '任课教师',
-    path: '/console/teacher',
+    path: '/teacher',
     children: null
   }]
 }]
