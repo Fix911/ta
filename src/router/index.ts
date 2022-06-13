@@ -17,15 +17,15 @@ const routes:RouteRecordRaw[] = [{
   children: [{
     path: '',
     name: 'console',
-    component: () => import('@/views/home/index.vue')
+    component: () => import('@/views/config/home/index.vue')
   },
   {
     path: '/location',
-    name: '地点',
+    name: 'location',
     component: () => import('@/views/config/location/index.vue')
 
   },
-  configRoutes
+  ...configRoutes
   ]
 }]
 

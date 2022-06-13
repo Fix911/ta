@@ -35,35 +35,38 @@
       </el-sub-menu>
     </el-sub-menu>
     <!-- 设置菜单    -->
-    <el-sub-menu index="/console/config">
+    <el-sub-menu
+      :index="item.path"
+      :key="item.id"
+      v-for="item in menuItem"
+    >
       <template #title>
         <el-icon><setting /></el-icon>
-        <span>设置</span>
+        <span>{{ item.name }}</span>
       </template>
-      <el-menu-item-group>
-        <el-menu-item index="/semester">
-          学期
-        </el-menu-item>
-        <el-menu-item index="/location">
-          班级
-        </el-menu-item>
-        <el-menu-item index="4-2">
-          课程
-        </el-menu-item>
-        <el-menu-item index="4-2">
-          作息时间
-        </el-menu-item>
-        <el-menu-item index="4-2">
-          教师任课
+      <el-menu-item-group
+        :key="unit.id"
+        v-for="unit in item.children"
+      >
+        <el-menu-item
+          :index="unit.path"
+          :key="unit.id"
+        >
+          {{ unit.name }}
         </el-menu-item>
       </el-menu-item-group>
     </el-sub-menu>
   </el-menu>
 </template>
 <script setup lang="ts">
+import { menuList } from '@/api/menu'
+import { Menu } from '@/api/type/menu'
+import { ref } from 'vue'
 import { ElMenu, ElMenuItem, ElIcon, ElSubMenu, ElMenuItemGroup } from 'element-plus'
 import {
   House,
   Setting
 } from '@element-plus/icons-vue'
+
+const menuItem = ref<Menu[]>(menuList)
 </script>
