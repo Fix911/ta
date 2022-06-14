@@ -1,5 +1,5 @@
 /**
- 从服务器获取菜单数据
+ * 服务器获取菜单
  */
 import { Menu } from './type/menu'
 export const menuList:Menu[] = [{
