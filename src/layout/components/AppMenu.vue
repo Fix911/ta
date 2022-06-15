@@ -41,7 +41,12 @@
       v-for="item in menuItem"
     >
       <template #title>
-        <el-icon><setting /></el-icon>
+        <svg-icon
+          color="#BFCBD9"
+          :name="item.icon"
+          size="18px"
+          class="svg-menu"
+        />
         <span>{{ item.name }}</span>
       </template>
       <el-menu-item-group
@@ -52,7 +57,15 @@
           :index="unit.path"
           :key="unit.id"
         >
-          {{ unit.name }}
+          <template #title>
+            <svg-icon
+              color="#BFCBD9"
+              :name="unit.icon"
+              size="18px"
+              class="svg-menu-second"
+            />
+            <span>{{ unit.name }}</span>
+          </template>
         </el-menu-item>
       </el-menu-item-group>
     </el-sub-menu>
@@ -62,11 +75,27 @@
 import { menuList } from '@/api/menu'
 import { Menu } from '@/api/type/menu'
 import { ref } from 'vue'
+import SvgIcon from '@/components/svgicon.vue'
+
 import { ElMenu, ElMenuItem, ElIcon, ElSubMenu, ElMenuItemGroup } from 'element-plus'
 import {
-  House,
-  Setting
+  House
 } from '@element-plus/icons-vue'
 
 const menuItem = ref<Menu[]>(menuList)
 </script>
+
+ <style lang="scss" scoped>
+ .svg-menu{
+    margin-right: 5px;
+    width: 24px;
+    height: 18px;
+ }
+ .svg-menu-second{
+    padding-left: 0px;
+    width: 24px;
+    height: 18px;
+    text-align: left;
+    margin-right: 5px;
+ }
+ </style>

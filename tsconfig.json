@@ -23,7 +23,8 @@
     },
     "types": [
       "element-plus/global",
-      "pinia-plugin-persist"
+      "pinia-plugin-persist",
+      "vite-plugin-svg-icons/client"
     ]
   },
   "include": [

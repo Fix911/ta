@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import path from 'path'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin, DomInject } from 'vite-plugin-svg-icons'
 import {
   createStyleImportPlugin,
   ElementPlusResolve
@@ -34,19 +34,19 @@ export default defineConfig({
       // 指定需要缓存的图标文件夹
       iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
       // 指定symbolId格式
-      symbolId: 'icon-[dir]-[name]'
+      symbolId: 'icon-[dir]-[name]',
 
       /**
        * 自定义插入位置
        * @default: body-last
        */
-      // inject: 'body-last' as DomInject | 'body-first' as DomInject,
+      inject: 'body-last' as DomInject | 'body-first' as DomInject,
 
       /**
        * custom dom id
        * @default: __svg__icons__dom__
        */
-      // customDomId: '__svg__icons__dom__'
+      customDomId: '__svg__icons__dom__'
     })
   ],
   resolve: {
