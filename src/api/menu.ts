@@ -3,10 +3,16 @@
  */
 import { Menu } from './type/menu'
 export const menuList:Menu[] = [{
+  id: 2,
+  name: '首页',
+  icon: 'home',
+  path: '/console',
+  children: null
+}, {
   id: 1,
   name: '设置',
   icon: 'setting',
-  path: '/console',
+  path: '',
   children: [{
     id: 11,
     name: '学期',
@@ -29,7 +35,7 @@ export const menuList:Menu[] = [{
   }, {
     id: 14,
     name: '作息时间表',
-    icon: 'schedule',
+    icon: 'term',
     path: '/schedule',
     children: null
   }, {
