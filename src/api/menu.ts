@@ -7,7 +7,13 @@ export const menuList:Menu[] = [{
   name: '首页',
   icon: 'home',
   path: '/console',
-  children: null
+  children: [{
+    id: 21,
+    name: '控制台首页',
+    path: '/console',
+    icon: 'console24',
+    children: null
+  }]
 }, {
   id: 1,
   name: '设置',

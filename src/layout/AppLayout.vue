@@ -30,7 +30,6 @@ import AppMenu from './components/AppMenu.vue'
 .el-container .el-aside {
   color: var(--el-text-color-primary);
   background: var(--el-color-primary-light-8);
-  width: 200px;
 }
 .el-container .el-menu {
   border-right: none;
