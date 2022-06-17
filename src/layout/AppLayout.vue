@@ -20,9 +20,6 @@ import AppMenu from './components/AppMenu.vue'
 import AppHeader from './headers/Index.vue'
 </script>
 <style scoped lang="scss">
-.el-container{
-  height: 100vh;
-}
 .el-container .el-header {
   position: relative;
   background-color: var(--el-color-primary-light-7);
@@ -31,6 +28,7 @@ import AppHeader from './headers/Index.vue'
 .el-container .el-aside {
   color: var(--el-text-color-primary);
   background: var(--el-color-primary-light-8);
+    height: 100vh;
 }
 .el-container .el-menu {
   border-right: none;

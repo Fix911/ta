@@ -1,29 +1,15 @@
 <template>
   <div class="navbar">
-    <div
-      class="collapse-btn"
-    >
-      <svg-icon
-        name="nav-collapsed"
-        v-if="collapse"
-      />
-      <svg-icon
-        name="nav-collapse"
-        v-else
-      />
-    </div>
+    <Hamburger />
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
-import SvgIcon from '@/components/svgicon.vue'
-
-const collapse = ref(false)
+import Hamburger from './components/hamburger.vue'
 </script>
 
 <style scoped lang="scss">
 .navbar{
-     position: relative;
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     height: 70px;

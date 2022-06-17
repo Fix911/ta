@@ -84,7 +84,6 @@ const savePath = (path:string) => {
     margin-right: 5px;
  }
  .el-menu-vertical-demo{
-    width: 200px;
     height: 100%;
  }
  </style>
