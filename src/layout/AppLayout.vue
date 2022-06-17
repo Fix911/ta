@@ -5,7 +5,7 @@
     </el-aside>
     <el-container>
       <el-header class="el-header">
-        Header
+        <app-header />
       </el-header>
       <el-main class="el-main">
         <router-view />
@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import { ElContainer, ElMain, ElAside, ElHeader } from 'element-plus'
 import AppMenu from './components/AppMenu.vue'
+import AppHeader from './headers/Index.vue'
 </script>
 <style scoped lang="scss">
 .el-container{

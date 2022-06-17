@@ -6,7 +6,7 @@ export const menuList:Menu[] = [{
   id: 2,
   name: '首页',
   icon: 'home',
-  path: '/console',
+  path: '2',
   children: [{
     id: 21,
     name: '控制台首页',
@@ -18,7 +18,7 @@ export const menuList:Menu[] = [{
   id: 1,
   name: '设置',
   icon: 'setting',
-  path: '',
+  path: '1',
   children: [{
     id: 11,
     name: '学期',

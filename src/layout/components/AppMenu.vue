@@ -3,10 +3,11 @@
     active-text-color="#25A0E4"
     background-color="#324157"
     class="el-menu-vertical-demo"
-    default-active="/console"
+    :default-active="defaultActive"
     text-color="#BFCBD9"
     router
     unique-opened
+    collapse-transition
     @open="handleOpen"
     @close="handleClose"
   >
@@ -32,6 +33,7 @@
         <el-menu-item
           :index="unit.path"
           :key="unit.id"
+          @click="savePath(unit.path)"
         >
           <template #title>
             <svg-icon
@@ -55,11 +57,16 @@ import SvgIcon from '@/components/svgicon.vue'
 import { ElMenu, ElMenuItem, ElSubMenu, ElMenuItemGroup } from 'element-plus'
 const menuItem = ref<Menu[]>(menuList)
 
+const defaultActive = ref<string>(sessionStorage.getItem('path') || '/console')
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
+}
+
+const savePath = (path:string) => {
+  sessionStorage.setItem('path', path)
 }
 </script>
 
