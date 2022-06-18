@@ -18,13 +18,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { ElContainer, ElMain, ElAside, ElHeader } from 'element-plus'
 import AppMenu from './components/AppMenu.vue'
 import AppHeader from './headers/Index.vue'
 import variables from '@/styles/variables.module.scss'
-const sidebarWidth = ref(variables.sidebarWidth)
-
+import { useConsoleStore } from '@/store/console'
+const getCollapseState = useConsoleStore()
+const sidebarWidth = computed(() => {
+  return getCollapseState.getCollapseState ? variables.sidebarCollapsedWidth : variables.sidebarWidth
+})
 </script>
 <style scoped lang="scss">
 .el-container .el-header {

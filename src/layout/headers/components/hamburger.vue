@@ -1,10 +1,11 @@
 <template>
   <div
     class="collapse-btn"
+    @click="handeHamburgerCollapse"
   >
     <svg-icon
       name="nav-collapsed"
-      v-if="collapse"
+      v-if="getCollapseState.getCollapseState"
     />
     <svg-icon
       name="nav-collapse"
@@ -13,7 +14,17 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
 import SvgIcon from '@/components/svgicon.vue'
-const collapse = ref(false)
+import { useConsoleStore } from '@/store/console'
+const getCollapseState = useConsoleStore()
+
+const handeHamburgerCollapse = () => {
+  getCollapseState.toggleCollapse()
+}
 </script>
+
+  <style scoped lang="scss">
+.collapse-btn {
+  padding: 0 10px;
+}
+  </style>

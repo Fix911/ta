@@ -9,7 +9,9 @@ export const useToken = defineStore('authorization', {
     company: '',
     companyId: ''
   }),
-  getters: {},
+  getters: {
+
+  },
   actions: {
     getToken (params:URLSearchParams) {
       const code = params.get('code') as string // 获取code

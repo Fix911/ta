@@ -10,6 +10,7 @@
     collapse-transition
     @open="handleOpen"
     @close="handleClose"
+    :collapse="collapse"
   >
     <!-- 设置菜单    -->
     <el-sub-menu
@@ -52,11 +53,15 @@
 <script setup lang="ts">
 import { menuList } from '@/api/menu'
 import { Menu } from '@/api/type/menu'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import SvgIcon from '@/components/svgicon.vue'
 import { ElMenu, ElMenuItem, ElSubMenu, ElMenuItemGroup } from 'element-plus'
-const menuItem = ref<Menu[]>(menuList)
+import { useConsoleStore } from '@/store/console'
 
+const menuItem = ref<Menu[]>(menuList)
+const collapse = computed(() => {
+  return useConsoleStore().getCollapseState
+})
 const defaultActive = ref<string>(sessionStorage.getItem('path') || '/console')
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
