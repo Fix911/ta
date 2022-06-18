@@ -1,6 +1,9 @@
 <template>
   <el-container class="el-container">
-    <el-aside class="el-aside">
+    <el-aside
+      class="el-aside"
+      :width="sidebarWidth"
+    >
       <app-menu />
     </el-aside>
     <el-container>
@@ -15,9 +18,13 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { ElContainer, ElMain, ElAside, ElHeader } from 'element-plus'
 import AppMenu from './components/AppMenu.vue'
 import AppHeader from './headers/Index.vue'
+import variables from '@/styles/variables.module.scss'
+const sidebarWidth = ref(variables.sidebarWidth)
+
 </script>
 <style scoped lang="scss">
 .el-container .el-header {
@@ -25,17 +32,21 @@ import AppHeader from './headers/Index.vue'
   background-color: var(--el-color-primary-light-7);
   color: var(--el-text-color-primary);
 }
+
 .el-container .el-aside {
   color: var(--el-text-color-primary);
   background: var(--el-color-primary-light-8);
-    height: 100vh;
+  height: 100vh;
 }
+
 .el-container .el-menu {
   border-right: none;
 }
+
 .el-container .el-main {
   padding: 0;
 }
+
 .el-container .toolbar {
   display: inline-flex;
   align-items: center;
