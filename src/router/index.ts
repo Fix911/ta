@@ -13,6 +13,7 @@ const routes:RouteRecordRaw[] = [{
 },
 {
   path: '/console',
+  name: 'console',
   component: Layout,
   children: [{
     path: '',
