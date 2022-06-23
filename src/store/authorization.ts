@@ -7,10 +7,11 @@ export const useToken = defineStore('authorization', {
     userName: '',
     userId: '',
     company: '',
-    companyId: ''
+    companyId: '',
+    avatar: ''
   }),
   getters: {
-
+    GetAvator: state => state.avatar
   },
   actions: {
     getToken (params:URLSearchParams) {
@@ -23,6 +24,7 @@ export const useToken = defineStore('authorization', {
           this.company = res.data.teacher.company.name
           this.companyId = res.data.teacher.company.corpId
           this.userId = res.data.teacher.id
+          this.avatar = res.data.teacher.avatar
           console.log(res.data)
         })
       }
