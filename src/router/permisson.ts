@@ -1,8 +1,10 @@
 import router from './index'
-
+import { useToken } from '@/store/authorization'
 const whiteList = ['/authorize', '/']
-const token = sessionStorage.getItem('authorization')
+
 router.beforeEach((to, from, next) => {
+  const token = useToken().GetToken
+  console.log(token)
   if (token) {
     if (to.path === '/') {
       next('/console')
@@ -13,9 +15,8 @@ router.beforeEach((to, from, next) => {
     if (whiteList.includes(to.path)) {
       next()
     } else {
-      // next('/') 本地测试用
-      next()
+      next('/') // 本地测试用
+      // next()
     }
   }
 })
-// if (to.matched.some(record => record.meta.requiresAuth)) {

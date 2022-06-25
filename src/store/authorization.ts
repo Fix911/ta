@@ -11,7 +11,8 @@ export const useToken = defineStore('authorization', {
     avatar: ''
   }),
   getters: {
-    GetAvator: state => state.avatar
+    GetAvator: (state) => state.avatar,
+    GetToken: (state) => state.token
   },
   actions: {
     getToken (params:URLSearchParams) {
@@ -25,7 +26,6 @@ export const useToken = defineStore('authorization', {
           this.companyId = res.data.teacher.company.corpId
           this.userId = res.data.teacher.id
           this.avatar = res.data.teacher.avatar
-          console.log(res.data)
         })
       }
     }
@@ -35,7 +35,7 @@ export const useToken = defineStore('authorization', {
     strategies: [{
       key: 'authorization',
       storage: sessionStorage,
-      paths: ['token', 'userName', 'company', 'companyId', 'userId']
+      paths: ['token', 'userName', 'company', 'companyId', 'userId', 'avatar']
     }]
   }
 })

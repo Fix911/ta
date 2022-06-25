@@ -1,6 +1,8 @@
 <template>
   <div class="xiaoxi">
     <span> 登录页面</span>
+    <a href="/console">控制台</a> <br>
+    <a href="/schedule">授权页面</a> <br>
     <svg-icon
       name="xiaoxi"
     />
