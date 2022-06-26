@@ -7,8 +7,8 @@
       v-for="(item,index) in breadcrumbList"
       :key="index"
     >
-      <span v-if="index===breadcrumbList.length-1">{{ item.name }}</span>
-      <span v-else>{{ item.name }}</span>
+      <span v-if="index===breadcrumbList.length-1">{{ $t(`menus.${item.path.slice(1)}`) }}</span>
+      <span v-else>{{ $t(`menus.${item.path.slice(1)}`) }}</span>
     </el-breadcrumb-item>
   </el-breadcrumb>
 </template>

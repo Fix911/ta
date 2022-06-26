@@ -11,7 +11,7 @@ export const useToken = defineStore('authorization', {
     avatar: ''
   }),
   getters: {
-    GetAvator: (state) => state.avatar,
+    GetAvatar: (state) => state.avatar.replace('http', 'https'),
     GetToken: (state) => state.token
   },
   actions: {

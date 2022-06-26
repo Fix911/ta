@@ -19,7 +19,7 @@ import { useRouter } from 'vue-router'
 import { ElAvatar, ElDropdown, ElDropdownMenu, ElDropdownItem } from 'element-plus'
 const token = useToken()
 const router = useRouter()
-const circleUrl = ref(token.GetAvator)
+const circleUrl = ref(token.GetAvatar)
 
 // 点击头像退出登录
 const logout = () => {

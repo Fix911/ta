@@ -12,11 +12,11 @@ const routes:RouteRecordRaw[] = [{
   component: () => import('@/views/authorize/index.vue')
 },
 {
-  path: '/console',
+  path: '/home',
   name: 'console',
   component: Layout,
   children: [{
-    path: '',
+    path: '/console',
     name: 'console',
     component: () => import('@/views/config/home/index.vue')
   },

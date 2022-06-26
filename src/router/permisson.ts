@@ -15,8 +15,8 @@ router.beforeEach((to, from, next) => {
     if (whiteList.includes(to.path)) {
       next()
     } else {
-      next('/') // 本地测试用
-      // next()
+      // next('/') // 本地测试用
+      next()
     }
   }
 })
